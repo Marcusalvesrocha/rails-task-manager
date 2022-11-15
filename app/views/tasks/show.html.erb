@@ -1,5 +1,7 @@
 <h1>Show Task</h1>
 
-<p><%= @task.title%></p>
+<p><%= "#{@task.id} - #{@task.title}"%></p>
 <p><%= @task.details%></p>
-<p><%= @task.completed%></p>
+<p><%=check_box_tag 'task', @task.id, @task.completed%>This task is <%= @task.completed ? " completed" : " not completed yet"%></p>
+
+<%=link_to "Back to list", tasks_path %>

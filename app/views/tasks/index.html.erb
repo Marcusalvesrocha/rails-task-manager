@@ -2,7 +2,8 @@
   <% @tasks.each do |task|%>
     <li>
       <%=check_box_tag 'task', task.id, task.completed%>
-      <%=task.title%>
+      <%=link_to "#{task.id} - #{task.title}", task_path(task) %>
     </li>
   <% end%>
+  <p><%= link_to "new task", new_task_path%></p>
 </ul>
